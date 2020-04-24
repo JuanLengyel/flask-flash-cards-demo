@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Delete card</title>
+</head>
+<body>
+  <h1>Remove existing card</h1>
+  <ul>
+    {% for card in cards %}
+    <form method="POST">
+      <li>{{ card.question }} <button type="submit" name="delete_index" value="{{ loop.index0 }}">Delete</button></li>
+    </form>
+    {% endfor %}
+  </ul>
+</body>
+</html>

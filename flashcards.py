@@ -39,6 +39,27 @@ def add_card():
   if request.method == 'GET':
     return render_template('add_card.html')
 
+@app.route('/delete_card/<int:index>', methods=['GET', 'POST'])
+def delete_card(index):
+  try:
+    if request.method == 'POST':
+      db.pop(index)
+      save_db()
+      return redirect(url_for('welcome'))
+    if request.method == 'GET':
+      return render_template('delete_card.html', card=db[index])
+  except IndexError:
+    abort(404)
+
+@app.route('/delete_card', methods=['GET', 'POST'])
+def delete_cards():
+  if request.method == 'POST':
+    db.pop(int(request.form['delete_index']))
+    save_db()
+    return redirect(url_for('delete_cards'))
+  if request.method == 'GET':
+    return render_template('delete_cards.html', cards=db)
+
 @app.route('/api/card')
 def api_card_list():
   return jsonify(db)
