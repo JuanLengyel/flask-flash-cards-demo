@@ -1,18 +1,1 @@
-[
-  {
-    "question": "Love",
-    "answer": "Amor"
-  },
-  {
-    "question": "Hate",
-    "answer": "Odio"
-  },
-  {
-    "question": "Boredom",
-    "answer": "Aburrimiento"
-  },
-  {
-    "question": "Joy",
-    "answer": "Alegria"
-  }
-]
+[{"question": "Love", "answer": "Amor"}, {"question": "Hate", "answer": "Odio"}, {"question": "Boredom", "answer": "Aburrimiento"}, {"question": "Joy", "answer": "Alegria"}, {"question": "Holy", "answer": "Santo"}]
