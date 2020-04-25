@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Flash Card</title>
-</head>
-<body>
-  <h1>Flash Card</h1>
-  Question: {{ card.question }} <br>
-  Answer: {{ card.answer }}
+{% extends "base.html" %}
+{% block title %}
+Flash Card
+{% endblock %}
+{% block content %}
+<h1>Flash Card</h1>
+Question: {{ card.question }} <br>
+Answer: {{ card.answer }}
 
-  <p>
-    <button>
-      <a href="{{ url_for('welcome') }}">
-        Home
-      </a>
-    </button>
+<p>
+  <button>
+    <a href="{{ url_for('welcome') }}">
+      Home
+    </a>
+  </button>
     <button>
       {% if index < max_index %}
       <a href="{{ url_for('card_view', index=index + 1) }}">
@@ -28,5 +26,4 @@
     </button>
     <a href="{{ url_for('delete_card', index=index) }}"><button>Delete</button></a>
   </p>
-</body>
-</html>
+{% endblock %}

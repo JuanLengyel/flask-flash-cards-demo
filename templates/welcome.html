@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Welcome!</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+Welcome!
+{% endblock %}
+{% block content %}
   <h1>Welcome to my page</h1>
   <p>
     This is my demo application to the Course <em>Getting Started with Flask</em>
@@ -20,5 +18,5 @@
     </li>
     {% endfor %}
   </ul>
-</body>
-</html>
+  </body>
+{% endblock %}
